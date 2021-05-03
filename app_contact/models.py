@@ -4,12 +4,12 @@ from django.db import models
 # Contact Model
 class Contact(models.Model):
     CONTACT_TYPES = (
-        ('priv', 'private'),
-        ('busi', 'business'),
+        ('RES', 'private'),
+        ('SME', 'business'),
     )
     name = models.CharField(max_length=256)
     first_name = models.CharField(max_length=256)
-    type = models.CharField(max_length=4, choices=CONTACT_TYPES)
+    type = models.CharField(max_length=3, choices=CONTACT_TYPES)
 
     addresses = models.ManyToManyField('Address', related_name='contacts')
 
